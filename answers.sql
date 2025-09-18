@@ -43,3 +43,11 @@ CREATE TABLE Categories (
     name VARCHAR(50) NOT NULL UNIQUE,
     description TEXT
 );
+
+CREATE TABLE ProductCategories (
+    product_id INT NOT NULL,
+    category_id INT NOT NULL,
+    PRIMARY KEY (product_id, category_id),
+    FOREIGN KEY (product_id) REFERENCES Products(product_id),
+    FOREIGN KEY (category_id) REFERENCES Categories(category_id)
+);
