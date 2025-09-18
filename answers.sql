@@ -37,3 +37,9 @@ CREATE TABLE OrderItems (
     FOREIGN KEY (product_id) REFERENCES Products(product_id),
     UNIQUE (order_id, product_id)  
 );
+
+CREATE TABLE Categories (
+    category_id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL UNIQUE,
+    description TEXT
+);
