@@ -51,3 +51,15 @@ CREATE TABLE ProductCategories (
     FOREIGN KEY (product_id) REFERENCES Products(product_id),
     FOREIGN KEY (category_id) REFERENCES Categories(category_id)
 );
+
+CREATE TABLE ShippingAddresses (
+    address_id INT AUTO_INCREMENT PRIMARY KEY,
+    customer_id INT NOT NULL,
+    address_line1 VARCHAR(100) NOT NULL,
+    address_line2 VARCHAR(100),
+    city VARCHAR(50) NOT NULL,
+    state VARCHAR(50),
+    postal_code VARCHAR(20) NOT NULL,
+    country VARCHAR(50) NOT NULL,
+    FOREIGN KEY (customer_id) REFERENCES Customers(customer_id)
+);
